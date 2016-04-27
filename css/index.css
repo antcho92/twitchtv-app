@@ -1,9 +1,15 @@
 body {
 	padding-top: 50px;
+	background-color: #A990D7;
 }
 
 * {
 	text-align: center;
+}
+
+#header {
+	background-color: #6441a4;
+	color: #fff;
 }
 
 .logo {
@@ -14,11 +20,23 @@ body {
 }
 
 .online {
-	background-color: #7887AB;
+	background-color: #7061A9;
+	color: #fff;
+}
+
+.offline {
+	background-color: #989898;
+	color: #7061A9;
 }
 
 .container {
 	max-width: 800px;
+}
+
+.row {
+  margin: 2px 0px;
+  padding: 5px;
+  line-height: 50px;
 }
 
 @media (max-width: 768px) {
