@@ -1,21 +1,34 @@
+var streams = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff"];
+
+$.ajax({
+	url: 'https://api.twitch.tv/kraken/streams/ESL_SC2',
+	type: 'GET',
+	dataType: 'jsonp',
+	success: function(data) {
+		var game,
+			status,
+			description,
+			logo = data.stream.channel.logo,
+			url = data.stream.channel.url,
+			channelName = data.stream.channel.name;
+    if (data.stream === null) {
+      game = "Offline";
+      status = "offline";
+    } else if (data.stream === undefined) {
+      game = "Account Closed";
+      status = "offline";
+    } else {
+      game = data.stream.game;
+      status = "online";
+			description = data.stream.channel.status;
+    };
+		var html = "<div class='row online'> <div class='col-xs-1'><img class='logo' src='" + logo +
+			"'> </div> <div class='col-xs-2'> <a href='" + url + "'>" + channelName + "</a></div> <div class='col-xs-8'>" + game +
+			"<span class='hidden-xs'>: " + description + "</span> </div> </div>";
+		$('#fccChannel').append(html);
+	}
+});
+
 $(document).ready(function() {
 
-	var streams = ["freecodecamp", "storbeck", "terakilobyte", "habathcx","RobotCaleb","thomasballinger","noobs2ninjas","beohoff"];
-
-	$.ajax({
-		url: 'https://api.twitch.tv/kraken/streams/ESL_SC2',
-		type: 'GET',
-		dataType: 'jsonp',
-		success: function(data) {
-			var channelLogo = data.stream.channel.logo,
-				channelUrl = data.stream.channel.url,
-				channelName = data.stream.channel.name,
-				channelGame = data.stream.channel.game;
-			var html = "<div class='row'> <div class='col-sm-1'><img src='" + data.stream.channel.logo +
-				"'> </div> <div class='col-sm-2'> <h3>" + channelName + "</h3> </div> </div>";
-			$('#fccChannel').append(html);
-			//$('#fccChannel').append("<img src='"+data.stream.channel.logo+"'> <a href=\'" + data.stream.channel.url +
-				//"'> <h3>" + data.stream.channel.name + "</h3> </a> <br> <p>" + data.stream.channel.game + "</p>");
-		}
-	});
 });
