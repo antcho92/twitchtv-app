@@ -10,13 +10,11 @@ body {
 #title {
     font-weight: bold;
     font-size: 3em;
-	text-align: left;
 }
-.btn-group{
+.btn-group-status {
     bottom: 15px;
     position: relative;
     top: 15px;
-
 }
 .logo {
     max-width: 60px;
