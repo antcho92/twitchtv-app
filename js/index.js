@@ -1,4 +1,4 @@
-var channels = ["FreeCodeCamp", "WagamamaTV", "brunofin", "sing_sing", "Arteezy", "n0thingtv", "EternaLEnVyy", "Aui_2000", "w33haa"];
+var channels = ["FreeCodeCamp", "WagamamaTV", "brunofin", "sing_sing", "Arteezy", "n0thingtv", "EternaLEnVyy", "Aui_2000", "w33haa", "ArmadaUGS", "ESL_SC2"];
 
 function getChannels() {
     channels.forEach(function(channel) {
@@ -50,8 +50,8 @@ $(document).ready(function() {
             $(".offline").addClass("hidden");
             $(".online").removeClass("hidden");
         } else {
+            $(".online").addClass("hidden");
             $(".offline").removeClass("hidden");
-            $(".online").addclass("hidden");
         }
     });
 });
