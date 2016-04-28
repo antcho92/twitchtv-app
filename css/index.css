@@ -12,10 +12,18 @@ body {
     font-size: 3em;
 }
 .btn-group-status {
-    bottom: 15px;
     position: relative;
-    top: 15px;
+    top: 25px;
 }
+#online {
+    background-color: #b8cca7;
+    color:#fff;
+}
+#offline{
+    background-color: #989898;
+    color: #fff;
+}
+
 .logo {
     max-width: 60px;
     max-height: 60px;

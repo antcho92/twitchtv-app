@@ -38,5 +38,5 @@ channels.forEach(function(channel) {
 });
 
 $(document).ready(function() {
-
+    
 });
