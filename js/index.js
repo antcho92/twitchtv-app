@@ -6,6 +6,9 @@ function getChannels() {
             url: 'https://api.twitch.tv/kraken/streams/' + channel,
             type: 'GET',
             dataType: 'jsonp',
+            data: {
+                client_id: 'pmcte01j2cpswcmn55ne7v1bc6qg8jo'
+            },
             success: function(data) {
                 var game,
                     status,
